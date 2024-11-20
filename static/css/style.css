@@ -1,0 +1,200 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6; /* Light background for contrast */
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #6f2c91; /* White text for headings */
+  font-size: 2rem;
+}
+
+/* Centering Content */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Button and Form Styles */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch items to fill the row */
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+  width: 100%; /* Full width for the form group */
+  margin-bottom: 10px; /* Space below each form group */
+}
+
+.label {
+  color: #6f2c91; /* Purple color for labels */
+  margin-right: 10px; /* Space between label and input */
+  white-space: nowrap; /* Prevent label from wrapping */
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #6f2c91; /* Border color matching the theme */
+  flex: 1; /* Allow input to grow and fill the row */
+}
+
+.join {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Full width for buttons */
+}
+
+.create-btn, #send-btn {
+  width: 100%;
+  padding: 10px 2px 10px 2px;
+  margin-left: 6px;
+  background-color: #6f2c91; /* Dark purple for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-btn:hover, #send-btn:hover {
+  background-color: #8e44ad; /* Lighter purple on hover */
+}
+
+/* Message Box Styles */
+ .message-box-header{
+  display: flex;
+  justify-content: center;
+  
+}
+.message-box-header h2{
+  color: white;
+  
+}
+.message-box {
+  border: 2px solid #6f2c91; /* Dark purple border */
+  border-radius: 10px;
+  background-color: #9b59b6; /* Purple background */
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  align-items: stretch;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Messages Container */
+.messages {
+  overflow-y: scroll;
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  background-color: #f3f4f6; /* Light background for messages */
+  border-radius: 0 0 10px 10px;
+  
+}
+
+/* Input Area */
+.inputs {
+  padding: 10px;
+  display: flex;
+  background-color: #fff; /* White background for input area */
+  border-radius: 0 0 10px 10px;
+}
+.message-input {
+  flex: 4; /* Adjust this to control the width of the input */
+  padding: 10px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px;
+  margin-left: 10px; /* Space between button and input */
+  
+}
+
+#send-btn {
+  flex: 0 0 380px;/* Send button will occupy the remaining width */
+  padding: 10px;
+  background-color: #6f2c91; /* Dark purple for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+  background-color: #8e44ad; /* Lighter purple on hover */
+}
+
+#message {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px;
+}
+
+/* Message Styling */
+.text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  background-color: #ffffff; /* White background for individual messages */
+  border-radius: 5px;
+  font-size: 20px;
+}
+.muted {
+  font-size: 10px;
+  color: darkgray;
+}
+.user-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  background-color: #ffffff; /* White background for user messages */
+  border-radius: 5px;
+}
+
+
+
+.system-message-enter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  background-color: #f0f8ff; /* Light blue background for enter messages */
+  color: green; /* Green text for enter messages */
+  border-radius: 5px;
+}
+
+.system-message-exit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  background-color: #ffe6e6; /* Light red background for exit messages */
+  color: red; /* Red text for exit messages */
+  border-radius: 5px;
+}
+
