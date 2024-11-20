@@ -22,7 +22,7 @@ JavaScript
 WebSocket Protocol: Powered by Socket.IO for real-time functionality.
 
 #### Demo Videos:
-##### Project screenshots:
+##### Project screenshots:https://github.com/singshikha/chat-web-app/blob/65c148a53c7fde2b09eed1766c95aeb76581bb97/screenshot.jpeg
 
 
 
