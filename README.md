@@ -2,12 +2,6 @@
 
 A real-time chat application built with Python's Flask framework and Socket.IO for instant communication. This project allows multiple users to join and participate in live chat rooms.
 
-
-Here's a detailed README.md file for your live chat application project:
-
-Live Chat Application
-A real-time chat application built with Python's Flask framework and Socket.IO for instant communication. This project allows multiple users to join and participate in live chat rooms.
-
 Features
 Real-time Communication: Messages are delivered instantly using WebSockets.
 Multiple Users: Supports multiple users in the same chat room.
