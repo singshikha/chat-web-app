@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+  <form method="post" class="buttons">
+    <h3 class="form-heading">Enter The Chat Room</h3> <!-- Updated heading -->
+    
+    <div class="form-group"> <!-- Container for the label and input -->
+      <label for="name" class="label">Name:</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Pick a name!"
+        name="name"
+        value="{{name}}"
+        required
+        class="input-field"
+      />
+    </div>
+
+    <div id="room-code-container" style="display: none;"> <!-- Initially hidden -->
+      <label for="code" class="label">Room Code:</label>
+      <input
+        type="text"
+        id="code"
+        placeholder="Enter Room Code"
+        name="code"
+        value="{{code}}"
+        class="input-field"
+      />
+    </div>
+
+    <div class="join">
+      <button type="button" name="join" class="create-btn" id="join-btn" onClick="handleJoin()">Join a Room</button>
+      <button type="submit" name="create" class="create-btn">Create a Room</button>
+    </div>
+
+    {% if error %}
+    <ul style="color: red;">
+      <li>{{error}}</li>
+    </ul>
+    {% endif %}
+  </form>
+</div>
+
+<script type="text/javascript">
+  function showRoomCode() {
+    const roomCodeContainer = document.getElementById("room-code-container");
+    roomCodeContainer.style.display = "block"; 
+  }
+
+  function handleJoin() {
+    const nameInput = document.querySelector('input[name="name"]');
+    const roomCodeInput = document.querySelector('input[name="code"]');
+    
+    if (!nameInput.value.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
+
+    if (roomCodeInput.parentElement.style.display !== "none") {
+      if (!roomCodeInput.value.trim()) {
+        alert("Please enter the room code.");
+        return;
+      }
+    } else {
+      showRoomCode(); 
+      return;
+    }
+
+    document.querySelector("form").submit();
+  }
+</script>
+{% endblock %}

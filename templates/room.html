@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="message-box">
+  <div class="message-box-header">
+    <div class="message-box-header-box">
+      <h2>Chat Room: {{code}}</h2>
+    </div>
+  </div>
+ 
+  <div class="messages" id="messages"></div>
+  <div class="inputs">
+    <input
+      type="text"
+      rows="3"
+      placeholder="Message"
+      name="message"
+      id="message"
+      class="message-input" 
+    />
+    <button type="button" name="send" id="send-btn" onClick="sendMessage()">Send</button>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  var socketio = io();
+
+  const messages = document.getElementById("messages");
+
+  const createMessage = (name, msg) => {
+    let messageClass;
+    if (msg.includes("has entered the room")) {
+      messageClass = "system-message-enter";
+    } else if (msg.includes("has left the room")) {
+      messageClass = "system-message-exit";
+    } else {
+      messageClass = "user-message"; // Default for user messages
+    }
+
+    const content = `
+    <div class="${messageClass}">
+        <span>
+            <strong>${name}</strong>: ${msg}
+        </span>
+        <span class="muted">
+            ${new Date().toLocaleString()}
+        </span>
+    </div>
+    `;
+    messages.innerHTML += content;
+  };
+
+  socketio.on("message", (data) => {
+    createMessage(data.name, data.message);
+  });
+
+  const sendMessage = () => {
+    const message = document.getElementById("message");
+    if (message.value == "") return;
+    socketio.emit("message", { data: message.value });
+    message.value = "";
+  };
+
+  document.getElementById("message").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent form submission if within a form
+    sendMessage();
+  }
+});
+</script>
+
+
+{% for msg in messages %}
+<script type="text/javascript">
+  createMessage("{{msg.name}}", "{{msg.message}}");
+</script>
+{% endfor %}
+{% endblock %}
