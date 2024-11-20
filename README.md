@@ -21,8 +21,7 @@ CSS3
 JavaScript
 WebSocket Protocol: Powered by Socket.IO for real-time functionality.
 
-#### Demo Videos:
-##### Project screenshots:![screenshot](https://github.com/user-attachments/assets/6371babf-ec8a-4e4e-bf3f-bd1e166f1069)
+#### Project screenshots:![screenshot](https://github.com/user-attachments/assets/6371babf-ec8a-4e4e-bf3f-bd1e166f1069)
 
 
 
